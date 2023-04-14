@@ -2,6 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {getFirelord,getFirestore,setDoc } from 'firelordjs'
+import {initializeApp} from 'firebase/app'
+
+const example = getFirelord<any>(getFirestore(initializeApp({
+  projectId: "any",
+
+})),'abc')
+
+setDoc(example.doc('abc'),{a:100})
+
 function App() {
   return (
     <div className="App">
